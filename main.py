@@ -15,8 +15,6 @@ proxies = {
 cookie = SimpleCookie()
 
 session = requests.Session()
-session.proxies = proxies
-session.verify = "/home/rostyslav/.mitmproxy/mitmproxy-ca-cert.pem"
 
 for set_cookie in set_cookies:
     cookie = SimpleCookie()
