@@ -22,7 +22,8 @@ for set_cookie in set_cookies:
     for key, morsel in cookie.items():
         session.cookies.set(key, morsel.value)
 
-test_url="https://naurok.com.ua/test/prava-nepovnolitnih-u-trudovomu-pravi-2852786/set"
+original_test_url = input("Test url: ")
+test_url=original_test_url[:-5]+"/set"
 set_page = session.get(test_url)
 tree = html.fromstring(set_page.text)
 csrf_token = tree.xpath('//meta[@name="csrf-token"]/@content')[0]
